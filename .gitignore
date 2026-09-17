@@ -1,0 +1,17 @@
+.DS_Store
+Thumbs.db
+.env
+.env.*
+.idea/
+.vscode/
+*.iml
+node_modules/
+.vercel/
+__pycache__/
+*.pyc
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~

@@ -1,0 +1,76 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #24332f;
+  background: #f7f9f8;
+  line-height: 1.75;
+  font-synthesis: none;
+  --accent: #17624d;
+  --muted: #53645d;
+  --border: #dce5df;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: var(--accent); text-underline-offset: 0.2em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 3px solid #246bd1; outline-offset: 5px; border-radius: 2px; }
+p, li { overflow-wrap: anywhere; }
+p { margin: 0 0 1rem; }
+ul, ol { padding-left: 1.4rem; }
+li + li { margin-top: 0.5rem; }
+h1, h2, h3 { color: #172e25; line-height: 1.3; }
+h1 { font-size: clamp(2rem, 5vw, 3.25rem); letter-spacing: -0.035em; margin: 0 0 1rem; }
+h2 { font-size: 1.35rem; margin: 0 0 1rem; letter-spacing: -0.015em; }
+h3 { font-size: 1.05rem; margin: 1.4rem 0 0.5rem; }
+section, main, header[id] { scroll-margin-top: 1.5rem; }
+.site-header, .site-footer { width: min(100% - 3rem, 70rem); margin-inline: auto; }
+.site-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.5rem; border-bottom: 1px solid var(--border); }
+.brand { text-decoration: none; color: #172e25; font-size: 1.4rem; font-weight: 750; letter-spacing: -0.04em; line-height: 1.3; }
+.brand span { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em; }
+.header-label { color: var(--muted); font-size: 0.875rem; }
+.policy, .home { width: min(100% - 3rem, 48rem); margin-inline: auto; padding-block: 3.5rem; }
+.eyebrow { color: var(--accent); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.updated { color: var(--muted); font-size: 0.9rem; }
+.lead { font-size: 1.125rem; margin-top: 1.5rem; }
+.notice { margin-block: 2rem; padding: 1.25rem; border: 1px solid #dbc996; border-left: 4px solid #8b6819; border-radius: 0.5rem; background: #fff9e9; color: #594513; }
+.notice h2 { color: inherit; font-size: 1rem; }
+.notice p { margin: 0; font-size: 0.95rem; }
+.contents { padding: 1.5rem; margin-block: 2rem 3rem; background: #eef4f0; border: 1px solid var(--border); border-radius: 0.75rem; }
+.contents h2 { font-size: 1.05rem; }
+.contents ol { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 2rem; margin-bottom: 0; font-size: 0.9rem; }
+.contents li + li { margin-top: 0; }
+.contents a { display: inline-block; padding-block: 0.25rem; }
+.policy section { padding-block: 2rem; border-top: 1px solid var(--border); }
+.policy section > :last-child { margin-bottom: 0; }
+.providers li + li { margin-top: 1rem; }
+.contact-pending { padding: 1rem; background: #eef4f0; border-radius: 0.5rem; }
+.contact-pending span { display: block; }
+.back-top { display: inline-block; margin-top: 1rem; padding-block: 0.5rem; }
+.site-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem; padding-block: 1.5rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+.site-footer p { margin: 0; }
+.home { min-height: 65vh; }
+.home h1 { max-width: 15ch; }
+.button { display: inline-block; padding: 0.75rem 1.25rem; margin-top: 1rem; background: var(--accent); color: white; border-radius: 0.5rem; font-weight: 600; }
+.skip-link { position: absolute; top: 0.75rem; left: 1rem; padding: 0.75rem 1rem; background: white; z-index: 10; transform: translateY(-200%); }
+.skip-link:focus { transform: translateY(0); }
+
+@media (max-width: 600px) {
+  .site-header, .site-footer, .policy, .home { width: calc(100% - 2rem); }
+  .policy, .home { padding-block: 2rem; }
+  .contents { padding: 1.25rem; }
+  .contents ol { grid-template-columns: 1fr; }
+  .policy section { padding-block: 1.75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+@media print {
+  :root { background: white; color: black; }
+  .policy { width: 100%; padding-block: 1rem; }
+  .skip-link, .contents, .back-top, .header-label { display: none; }
+  .policy section { break-inside: avoid; }
+  h2, h3 { break-after: avoid; }
+}
