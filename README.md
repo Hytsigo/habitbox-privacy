@@ -1,142 +1,149 @@
-# HabitBox · Política de Privacidad
+# HabitBox · Sitio legal bilingüe
 
-Web independiente en español para **HabitBox: Habit Tracker**. HTML y CSS, sin JavaScript, dependencias de ejecución, compilación, formularios, analítica ni cookies propias. La tipografía es del sistema: no se descargan fuentes externas. Los enlaces a políticas de terceros solo se abren cuando el visitante los pulsa.
+Sitio estático independiente de HabitBox: Habit Tracker. HTML y CSS, sin JavaScript,
+formularios, dependencias, cookies propias, analítica ni fuentes externas. El correo
+público confirmado por el responsable del proyecto es `rioscleiver49@gmail.com`.
 
-## Antes de publicar: contacto obligatorio
+## Páginas y rutas de Vercel
 
-**No publiques esta versión en producción ni la presentes en Google Play con el contacto pendiente.**
+| Contenido | Español | English |
+| --- | --- | --- |
+| Privacidad | `/privacy` | `/privacy-en` |
+| Términos | `/terms` | `/terms-en` |
+| Solicitud de eliminación | `/delete-account-es` | `/delete-account` |
 
-1. En `privacy.html`, reemplaza `[EMAIL DE CONTACTO]` por un correo oficial operativo que atienda consultas de privacidad y solicitudes de eliminación.
-2. Sustituye el párrafo `contact-pending` completo por un enlace accesible al correo real. Por ejemplo, con tu dirección real en ambos lugares:
+`/` sirve la portada bilingüe. Se mantiene `/delete-account` en inglés para no romper
+la ruta existente. Cada página enlaza con su traducción y las otras páginas legales.
+Los enlaces internos usan archivos `.html` para funcionar también en vista local.
+En Vercel, `cleanUrls: true` los redirige a la ruta sin extensión y
+`trailingSlash: false` normaliza la barra final.
 
-   ```html
-   <p>Correo de contacto: <a href="mailto:TU_CORREO_REAL">TU_CORREO_REAL</a></p>
-   ```
+No se ha supuesto ni reservado un dominio. No hay enlaces al dominio ajeno
+`habitbox.app`. El identificador Android `com.habitbox.app` no es un dominio web
+de la aplicación ni debe cambiarse por este motivo.
 
-3. Retira el bloque `<aside class="notice" ...>...</aside>` de contacto pendiente y los comentarios de publicación, una vez configurado y comprobado el correo.
-4. Confirma que puedes recibir y tramitar las solicitudes de eliminación por ese canal. No se ha creado una pantalla de eliminación, un formulario ni una URL ficticia.
-5. Revisa la fecha de actualización: se ha utilizado **16 de septiembre de 2026**. Si publicas o revisas el texto otro día, actualiza tanto `datetime` como la fecha visible.
-6. Revisa que la conservación y las medidas de seguridad descritas correspondan a la operación real de HabitBox. El texto no establece plazos de borrado, cifrado específico ni certificaciones no confirmadas.
+## Contenido y revisión previa
 
-El aviso visible es informativo: **no bloquea técnicamente un despliegue**. Debes resolverlo antes de publicar.
+Los textos se han contrastado con el código local actual: Google Sign-In,
+email/teléfono y contraseña hasheada con Argon2id, token en almacenamiento seguro,
+hábitos/completaciones, recordatorios locales, backend PostgreSQL, Cloudflare y
+suscripciones Google Play/RevenueCat. No anuncian recuperación de contraseña,
+OTP, push remoto, intervalos de recordatorios aún no implementados ni sesiones
+renovables de 30 días aún no implementadas.
 
-## Archivos
+Password recovery is intentionally out of scope for this release.
 
-```text
-habitbox-privacy/
-├── index.html
-├── privacy.html
-├── styles.css
-├── README.md
-├── .gitignore
-└── vercel.json
-```
+La fecha editorial es **10 de octubre de 2026**. Se usa únicamente la marca
+HabitBox, sin inventar una empresa, dirección o jurisdicción. Antes de publicar:
 
-- `index.html`: entrada sencilla con enlace a la política.
-- `privacy.html`: política completa, índice y contacto pendiente.
-- `styles.css`: estilos responsive, foco visible, enlace para saltar al contenido y estilos de impresión.
-- `vercel.json`: URLs sin extensión y normalización sin barra final.
-- `.gitignore`: excluye secretos locales, dependencias, configuración local de Vercel, IDE y temporales.
+1. Revisa y aprueba los textos en ambos idiomas. Son una base adaptada al proyecto,
+   no una certificación de cumplimiento ni una garantía de aprobación de Google Play.
+2. Confirma que el correo recibe mensajes y que atenderás las solicitudes de datos
+   y eliminación. El sitio abre el cliente de correo; no ejecuta eliminaciones.
+3. Revisa si la normativa aplicable exige identificar con más detalle a la persona
+   o entidad responsable. Añade solamente datos reales y aprobados.
+4. Verifica que la conservación descrita coincide con tu operación, incluidos
+   respaldos y registros técnicos. No se ha inventado un plazo de borrado o de
+   conservación. Si retienes datos después del borrado, concreta qué datos, motivo
+   y periodo real en ambos idiomas y en Play Console.
+5. Completa Seguridad de los datos y el público objetivo en Play Console según
+   el comportamiento real de la app y de sus SDKs, no solo según estas páginas.
+
+### Bloqueo separado de la aplicación
+
+En la inspección, mobile ofrece «Eliminar cuenta» y solicita `DELETE /api/me`, pero
+el backend no implementa esa ruta; además, mobile cierra sesión en `finally` incluso
+si la eliminación falla. Estas páginas describen **solo la solicitud por correo**,
+no un botón funcional ni un borrado automático.
+
+Publicar este sitio no resuelve la eliminación dentro de la aplicación ni sustituye
+las obligaciones de Google Play. Corregir y probar ese flujo antes del release.
+Las excepciones de conservación de terceros tampoco equivalen a que HabitBox pueda
+ignorar una solicitud válida: hay que tramitarla en los sistemas que correspondan.
 
 ## Vista local
 
-Puedes abrir `privacy.html` directamente en el navegador. Para servir los archivos por HTTP, con Python 3 instalado:
+Desde esta carpeta:
 
-```bash
-cd ~/Documentos/proyectos/habitbox-privacy
+```sh
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-Abre `http://127.0.0.1:8000/privacy.html`. Este servidor básico no interpreta `vercel.json`: el enlace limpio `/privacy` de la portada está pensado para Vercel. Detén el servidor con `Ctrl+C`.
+Abre `http://127.0.0.1:8000/`. La navegación usa `.html`, por lo que funciona sin
+Vercel. Detén el servidor con Ctrl+C. No se necesita instalación ni build.
 
-## GitHub: crear el repositorio y hacer push
+## Publicar en Vercel
 
-Ejecuta estos comandos **después de completar el contacto y revisar el contenido**. Requieren Git y GitHub CLI (`gh`), con una cuenta de GitHub. Solo afectan a esta carpeta:
+El repositorio ya está inicializado y tiene remoto GitHub. No vuelvas a ejecutar
+`git init` ni a crear otro repositorio. Un push puede activar un despliegue si existe
+una integración: hazlo solo cuando hayas aprobado el contenido y quieras publicarlo.
 
-```bash
-cd ~/Documentos/proyectos/habitbox-privacy
-git init -b main
-git status --short
-git add index.html privacy.html styles.css README.md .gitignore vercel.json
-git diff --cached --check
-git diff --cached
-git commit -m "Add HabitBox privacy website"
-gh auth login
-gh repo create habitbox-privacy --public --source=. --remote=origin --push
+En Vercel:
+
+1. Importa el repositorio **habitbox-privacy** en tu cuenta, o usa su proyecto existente.
+2. Framework Preset: **Other**.
+3. Root Directory: raíz de este repositorio.
+4. Install Command y Build Command: vacíos; Output Directory: `.`.
+5. No hacen falta variables de entorno ni secretos.
+6. Publica cuando hayas aprobado los textos. Verifica que la URL de producción sea
+   accesible sin iniciar sesión ni pasar por Deployment Protection.
+7. Copia el dominio que Vercel realmente asigne o el dominio propio que configures.
+   No uses una URL de ejemplo como si fuera tuya.
+
+No se ha ejecutado ningún despliegue, push ni cambio de DNS como parte de esta edición.
+
+## Validación tras publicar
+
+Establece `SITE_URL` con **tu URL HTTPS real**, sin barra final. No es un secreto.
+
+```sh
+curl --fail -I "$SITE_URL/"
+curl --fail -I "$SITE_URL/privacy"
+curl --fail -I "$SITE_URL/privacy-en"
+curl --fail -I "$SITE_URL/terms"
+curl --fail -I "$SITE_URL/terms-en"
+curl --fail -I "$SITE_URL/delete-account-es"
+curl --fail -I "$SITE_URL/delete-account"
+curl --fail -I "$SITE_URL/styles.css"
 ```
 
-La última orden crea el repositorio en tu cuenta y publica el commit. No incluyas claves ni archivos `.env`. Si el nombre ya existe en tu cuenta, elige otro nombre de repositorio.
+Comprueba también las redirecciones de `.html` a URL limpia, el selector de idioma,
+enlaces por teclado, vista móvil y enlaces de correo. Prueba desde una ventana
+privada para detectar protección de acceso accidental.
 
-Para futuras actualizaciones, revisa y añade solo los archivos modificados, crea un commit y ejecuta `git push origin main`. Si has conectado GitHub a Vercel, el push a la rama de producción iniciará el despliegue.
+## URLs para HabitBox y Google Play
 
-## Vercel: importar desde GitHub
+Cuando confirmes el dominio publicado:
 
-1. En Vercel, selecciona **Add New → Project** e importa `habitbox-privacy` desde GitHub.
-2. Usa `habitbox-privacy` como nombre de proyecto, si está disponible.
-3. Selecciona **Framework Preset: Other**.
-4. Deja **Root Directory** en la raíz del repositorio.
-5. No configures comandos de instalación ni compilación. En **Build Command**, activa el override y déjalo vacío si la interfaz propone un comando. Usa `.` como **Output Directory** (los HTML están en la raíz).
-6. No añadas variables de entorno, servicios ni integraciones de analítica.
-7. Pulsa **Deploy**. La política de producción debe ser pública y accesible sin iniciar sesión; revisa Deployment Protection si aparece una pantalla de acceso.
+- App en español: `<tu-origen>/privacy` y `<tu-origen>/terms`.
+- App en inglés: `<tu-origen>/privacy-en` y `<tu-origen>/terms-en`.
+- Play Console, eliminación: `<tu-origen>/delete-account-es` o
+  `<tu-origen>/delete-account`, según el idioma que presentes.
 
-### Despliegue desde terminal
+El proyecto principal todavía debe sustituir sus enlaces anteriores por estas URLs
+confirmadas. Esta tarea no modifica mobile, backend ni la configuración de RevenueCat.
 
-Como alternativa al despliegue desde el panel, con Node.js y npm instalados y después de completar el contacto:
+## Comprobación local sin dependencias
 
-```bash
-cd ~/Documentos/proyectos/habitbox-privacy
-npx vercel login
-npx vercel --prod
+```sh
+python3 checks.py
+git diff --check
 ```
 
-Responde a las preguntas para vincular el proyecto correcto y publicar esta carpeta. Selecciona `Other`, sin build, con salida `.` si se solicita. La CLI se ejecuta como herramienta de despliegue; no es una dependencia de la web. `.vercel/` queda excluido de Git.
+`checks.py` comprueba las siete páginas, estructura básica, correspondencia de idiomas,
+IDs y enlaces locales, contacto, ausencia de marcadores pendientes/dominio ajeno,
+ausencia de scripts/formularios y configuración de rutas. No sustituye un validador
+HTML5 completo ni una revisión visual; tampoco certifica contenido legal o el despliegue.
 
-## Rutas
+### Resultados de esta edición
 
-`cleanUrls: true` permite servir `privacy.html` como `/privacy`, sin JavaScript ni rewrites. Vercel redirige `/privacy.html` a `/privacy`. `trailingSlash: false` normaliza `/privacy/` a `/privacy`. `/` sirve `index.html`.
+- `python3 checks.py`: siete páginas, tres pares bilingües y 129 enlaces locales correctos.
+- Parseo HTML5 con `parse5`: siete páginas sin errores de parseo.
+- Parseo CSS con `postcss`: sin errores de sintaxis.
+- Servidor HTTP local temporal: portada, seis páginas y CSS respondieron 200.
+- `git diff --check`: sin errores de espacios.
 
-Tras el despliegue, comprueba la URL que Vercel haya asignado (sustituye el host si es distinto):
-
-```bash
-curl -I https://habitbox-privacy.vercel.app/privacy
-curl -I https://habitbox-privacy.vercel.app/privacy.html
-curl -I https://habitbox-privacy.vercel.app/privacy/
-curl -I https://habitbox-privacy.vercel.app/styles.css
-```
-
-Se espera `200` para la política y el CSS, y redirección permanente hacia `/privacy` para las otras dos variantes. Abre también la página en Android y escritorio, verifica el contacto, la navegación por teclado y la ausencia de desplazamiento horizontal.
-
-## Dominio
-
-El subdominio gratuito asignado por Vercel es suficiente. `habitbox-privacy.vercel.app` es un nombre previsto, no un dominio reservado: consulta el que realmente aparezca en **Settings → Domains**.
-
-Si ya dispones de un dominio propio, añádelo en **Settings → Domains** y configura en su proveedor DNS los registros exactos que indique Vercel. Espera la verificación del dominio y del HTTPS. La ruta seguirá siendo `/privacy`.
-
-## Google Play Console
-
-Cuando el contacto esté completado y el despliegue sea público, utiliza la URL HTTPS de producción en el campo de política de privacidad de Google Play Console:
-
-```text
-https://habitbox-privacy.vercel.app/privacy
-```
-
-Sustituye el dominio por el definitivo si es distinto. No uses una URL de preview protegida, un archivo local ni la página con el aviso de contacto pendiente.
-
-La sección `https://habitbox-privacy.vercel.app/privacy#eliminacion` explica cómo solicitar el borrado por correo una vez configurado. Esta web no implementa el borrado en el backend. Google Play puede exigir también opciones de eliminación dentro de la aplicación y una URL de solicitud externa: revisa esos requisitos en Play Console y confirma que el proceso real de HabitBox los cumple. Publicar esta política no sustituye esa implementación ni la declaración de Seguridad de los datos.
-
-## Alcance de la revisión
-
-El texto se redactó a partir de la información facilitada, sin consultar el proyecto principal. Incluye Google Sign-In, Google Play, RevenueCat, backend propio con PostgreSQL y recordatorios locales mediante Expo Notifications. Vercel se identifica únicamente como alojamiento de esta web.
-
-No incluye precios, contraseñas de Google, almacenamiento de tarjetas, proveedores adicionales de la app ni notificaciones push remotas. No se prometen certificaciones, plazos de conservación concretos ni aprobación de Google Play.
-
-### Comprobaciones realizadas al crear el proyecto
-
-- HTML procesado en modo estricto con un parser HTML5: sin errores; idioma, un único `h1` por página, IDs únicos y destinos de enlaces internos comprobados.
-- CSS analizado sin errores de sintaxis; propiedades y valores comprobados con `CSS.supports` en Chromium.
-- Ambas páginas probadas en Chromium a 320, 360, 393, 600, 768, 1280 y 1920 px de ancho: sin desbordamiento horizontal. Revisadas capturas de móvil y escritorio.
-- Comprobados enlace de salto con teclado, foco visible y preferencia de movimiento reducido.
-- Configuración contrastada con el esquema oficial de Vercel y comprobada la existencia de `privacy.html`. La respuesta HTTP de `/privacy` en Vercel queda pendiente del despliegue; los comandos anteriores permiten comprobarla.
-- Revisados contenido y archivos para evitar precios permanentes, funcionalidades no indicadas y secretos evidentes.
-
-Las herramientas de comprobación se ejecutaron fuera del proyecto y no son dependencias de esta web. La simulación de tamaños móviles no sustituye una prueba en un dispositivo Android físico.
+Los parsers ya estaban disponibles en el proyecto vecino y se usaron solo para
+verificar; no se instalaron dependencias en este sitio. No se ha realizado una
+prueba visual automatizada en navegador ni se han verificado las URLs públicas
+finales, que dependen de tu despliegue.

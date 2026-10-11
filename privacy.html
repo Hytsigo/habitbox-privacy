@@ -6,27 +6,22 @@
   <meta name="description" content="Política de Privacidad de HabitBox: Habit Tracker. Información sobre cuentas, hábitos, suscripciones, recordatorios y eliminación de datos.">
   <title>Política de Privacidad · HabitBox: Habit Tracker</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="alternate" hreflang="es" href="privacy.html">
+  <link rel="alternate" hreflang="en" href="privacy-en.html">
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="site-header" id="inicio">
     <a class="brand" href="./" aria-label="HabitBox, inicio">HabitBox <span>Habit Tracker</span></a>
-    <span class="header-label">Privacidad</span>
+    <nav class="language-nav" aria-label="Idioma"><span aria-current="page">Español</span><a href="privacy-en.html" lang="en" hreflang="en">English</a></nav>
   </header>
   <main id="contenido" class="policy">
     <header class="policy-heading">
       <p class="eyebrow">Información sobre tus datos</p>
       <h1>Política de Privacidad</h1>
-      <p class="updated">Última actualización: <time datetime="2026-09-16">16 de septiembre de 2026</time></p>
+      <p class="updated">Última actualización: <time datetime="2026-10-10">10 de octubre de 2026</time></p>
       <p class="lead">Esta política explica qué información utiliza HabitBox, para qué la utiliza y cómo puedes solicitar la eliminación de tu cuenta y tus datos.</p>
     </header>
-
-    <!-- ANTES DE PUBLICAR: sustituir [EMAIL DE CONTACTO] por el correo oficial
-         operativo, crear el enlace mailto correspondiente y retirar este aviso. -->
-    <aside class="notice" aria-labelledby="pendiente">
-      <h2 id="pendiente">Información de contacto pendiente</h2>
-      <p>Esta versión está pendiente de completar con el correo oficial de contacto. No debe utilizarse como política publicada en Google Play hasta que ese canal esté disponible.</p>
-    </aside>
 
     <nav class="contents" aria-labelledby="indice">
       <h2 id="indice">En esta política</h2>
@@ -34,7 +29,7 @@
         <li><a href="#introduccion">Introducción</a></li>
         <li><a href="#informacion">Información que recopilamos</a></li>
         <li><a href="#uso">Cómo utilizamos la información</a></li>
-        <li><a href="#google">Autenticación con Google</a></li>
+        <li><a href="#google">Autenticación y sesión</a></li>
         <li><a href="#habitos">Hábitos y datos del usuario</a></li>
         <li><a href="#suscripciones">Suscripciones y pagos</a></li>
         <li><a href="#terceros">Servicios de terceros</a></li>
@@ -50,19 +45,21 @@
 
     <section id="introduccion">
       <h2>1. Introducción</h2>
-      <p>HabitBox: Habit Tracker es una aplicación Android para realizar un seguimiento de hábitos diarios. Ofrece una versión gratuita y suscripciones Premium mensuales y anuales.</p>
-      <p>Esta política describe el tratamiento de información relacionado con la aplicación. Esta web informativa no incorpora formularios, autenticación, herramientas de analítica ni cookies propias. El alojamiento en Vercel puede implicar el tratamiento de datos técnicos de las solicitudes, como la dirección IP, para servir la página.</p>
+      <p>HabitBox: Habit Tracker es una aplicación Android para realizar un seguimiento de hábitos. El servicio se presenta bajo la marca HabitBox. Para contactar con quien gestiona el servicio y atiende consultas sobre tus datos, escribe a <a href="mailto:rioscleiver49@gmail.com">rioscleiver49@gmail.com</a>.</p>
+      <p>Esta política describe el tratamiento de información relacionado con la aplicación. Esta web informativa no incorpora formularios, autenticación, herramientas de analítica ni cookies propias. Si accedes a ella mediante el alojamiento de Vercel, este proveedor puede tratar datos técnicos de las solicitudes, como la dirección IP, para servir y proteger la página.</p>
     </section>
 
     <section id="informacion">
       <h2>2. Información que recopilamos</h2>
       <p>Según las funciones que utilices, HabitBox puede tratar las siguientes categorías de información:</p>
       <h3>Información de la cuenta</h3>
-      <p>Nombre, correo electrónico, identificador de Google, foto o avatar cuando esté disponible, identificador interno de usuario de HabitBox y zona horaria.</p>
+      <p>Nombre, identificador interno de usuario y zona horaria. Según el método de acceso, también tratamos el correo electrónico, identificador de Google y foto o avatar, o el correo electrónico o número de teléfono que introduzcas al registrarte con contraseña. En este último caso, almacenamos una representación protegida de la contraseña (hash Argon2id), no la contraseña en texto plano.</p>
       <h3>Información de tus hábitos</h3>
       <p>Hábitos, nombres, iconos o emojis, colores, frecuencia, días de frecuencia, horas de recordatorio, estado activo o inactivo y registros y fechas de cumplimiento.</p>
       <h3>Información de suscripción</h3>
       <p>Estado de la suscripción, producto adquirido, fechas relacionadas con la suscripción e identificadores necesarios para sincronizarla. También se trata la información proporcionada por RevenueCat y Google Play necesaria para validar el estado de Premium.</p>
+      <h3>Datos técnicos y comunicaciones</h3>
+      <p>Las solicitudes a nuestros servicios pueden generar registros técnicos, como dirección IP, fecha, ruta solicitada y resultado de la solicitud, para prestar el servicio, diagnosticar errores y protegerlo. Los servicios de suscripción pueden tratar información de la app, dispositivo y transacciones. Si nos escribes, tratamos tu dirección de correo y el contenido necesario para atender tu consulta.</p>
     </section>
 
     <section id="uso">
@@ -79,9 +76,11 @@
     </section>
 
     <section id="google">
-      <h2>4. Autenticación con Google</h2>
+      <h2>4. Autenticación y sesión</h2>
       <p>HabitBox utiliza Google Sign-In para iniciar sesión e identificar tu cuenta. En este proceso, puede recibir de Google tu nombre, correo electrónico, identificador y foto de perfil, cuando esté disponible.</p>
-      <p>La autenticación se realiza mediante Google. HabitBox no recibe ni almacena tu contraseña de Google.</p>
+      <p>En este método de acceso, la autenticación se realiza mediante Google. HabitBox no recibe ni almacena tu contraseña de Google.</p>
+      <p>También puedes crear una cuenta con email o teléfono y una contraseña de HabitBox. En esa modalidad, tu contraseña se envía al backend para verificarla o generar su hash. No se usa tu teléfono para enviarte SMS u OTP; la verificación de contacto y la recuperación de contraseña no están disponibles en esta versión.</p>
+      <p>La app guarda el token de acceso en el almacenamiento seguro del dispositivo para restaurar la sesión. Cerrar sesión elimina ese token local; no elimina tu cuenta, tus hábitos ni tu suscripción.</p>
     </section>
 
     <section id="habitos">
@@ -92,7 +91,7 @@
 
     <section id="suscripciones">
       <h2>6. Suscripciones y pagos</h2>
-      <p>Las compras de suscripciones Premium en Android se procesan mediante Google Play Billing. HabitBox utiliza RevenueCat para gestionar y validar las suscripciones y determinar el acceso a Premium.</p>
+      <p>Cuando las compras Premium estén disponibles, las suscripciones mensuales y anuales en Android se procesan mediante Google Play Billing. HabitBox utiliza RevenueCat para gestionar y validar las suscripciones. El backend comprueba el estado para autorizar las funciones Premium. Los importes y condiciones aplicables son los que muestra la tienda antes de confirmar la compra.</p>
       <p>Para ello, se utilizan los datos de suscripción descritos en esta política. HabitBox no recibe ni almacena números de tarjetas de crédito ni credenciales bancarias. La información del medio de pago se gestiona a través de Google Play conforme a sus condiciones y políticas.</p>
       <p>La eliminación de una cuenta de HabitBox no equivale a cancelar una suscripción en Google Play. Puedes gestionar o cancelar tu suscripción desde la sección de suscripciones de Google Play.</p>
     </section>
@@ -104,14 +103,16 @@
         <li><strong>Google Sign-In.</strong> Autenticación e identificación de la cuenta. Consulta la <a href="https://policies.google.com/privacy?hl=es">Política de Privacidad de Google</a>.</li>
         <li><strong>Google Play.</strong> Distribución de la aplicación y procesamiento de compras y suscripciones en Android. Consulta la <a href="https://policies.google.com/privacy?hl=es">Política de Privacidad de Google aplicable a sus servicios</a>.</li>
         <li><strong>RevenueCat.</strong> Gestión y validación de suscripciones y del estado de Premium mediante los identificadores y datos necesarios para estas funciones. Consulta la <a href="https://www.revenuecat.com/privacy/">Política de Privacidad de RevenueCat (en inglés)</a>.</li>
+        <li><strong>Cloudflare.</strong> Acceso HTTPS y transporte de solicitudes hacia el backend. Puede tratar datos técnicos necesarios para entregar y proteger ese tráfico. Consulta la <a href="https://www.cloudflare.com/privacypolicy/">Política de Privacidad de Cloudflare</a>.</li>
       </ul>
-      <p>Esta web de privacidad se aloja en Vercel. Para el tratamiento de datos técnicos del alojamiento, puedes consultar la <a href="https://vercel.com/legal/privacy-policy">Política de Privacidad de Vercel (en inglés)</a>.</p>
+      <p>Para el tratamiento de datos técnicos cuando esta web se sirve desde Vercel, consulta la <a href="https://vercel.com/legal/privacy-policy">Política de Privacidad de Vercel (en inglés)</a>. Estos proveedores pueden procesar información en países distintos al tuyo conforme a sus políticas y a la normativa aplicable.</p>
     </section>
 
     <section id="notificaciones">
       <h2>8. Notificaciones</h2>
       <p>HabitBox puede programar notificaciones locales en tu dispositivo mediante Expo Notifications para recordarte tus hábitos. Los recordatorios se generan localmente; esta función no utiliza un sistema de notificaciones push remoto.</p>
       <p>Puedes permitir o desactivar las notificaciones desde los ajustes de Android. Si las desactivas, los recordatorios no se mostrarán.</p>
+      <p>El nombre del hábito puede aparecer en la notificación y en la pantalla bloqueada, según tus ajustes de Android. Puedes limitar esa vista previa desde el dispositivo.</p>
     </section>
 
     <section id="conservacion">
@@ -128,8 +129,9 @@
     <section id="eliminacion">
       <h2>11. Eliminación de cuenta y datos</h2>
       <p>Puedes solicitar la eliminación de tu cuenta de HabitBox y de los datos asociados, incluidos los hábitos y los registros de cumplimiento, a través del correo de la <a href="#contacto">sección de contacto</a>.</p>
-      <p>Indica que deseas eliminar tu cuenta y el correo asociado a ella. Podemos pedir la información mínima necesaria para verificar que la cuenta te pertenece antes de tramitar la solicitud. No envíes contraseñas ni datos de pago.</p>
+      <p>Indica que deseas eliminar tu cuenta y el correo o teléfono asociado a ella. Podemos pedir la información mínima necesaria para verificar que la cuenta te pertenece antes de tramitar la solicitud. No envíes contraseñas, tokens de acceso ni datos de pago. Consulta los <a href="delete-account-es.html">pasos para solicitar la eliminación</a>.</p>
       <p>Las posibles excepciones de conservación se describen en la <a href="#conservacion">sección de conservación de datos</a>. Desinstalar la aplicación no constituye una solicitud de eliminación de cuenta. Si tienes una suscripción activa, gestiona su cancelación por separado en Google Play.</p>
+      <p>También puedes escribirnos para solicitar acceso a tus datos, corregirlos o ejercer los derechos que correspondan según la normativa aplicable a tu situación.</p>
     </section>
 
     <section id="menores">
@@ -146,14 +148,13 @@
     <section id="contacto">
       <h2>14. Contacto</h2>
       <p>Para consultas sobre privacidad o solicitudes de eliminación de cuenta y datos, utiliza el correo oficial de HabitBox.</p>
-      <!-- PUBLICACIÓN PENDIENTE: reemplazar por un correo real y operativo. -->
-      <p class="contact-pending"><strong>Correo pendiente de configurar:</strong> <span>[EMAIL DE CONTACTO]</span></p>
+      <p><a href="mailto:rioscleiver49@gmail.com">rioscleiver49@gmail.com</a></p>
     </section>
     <a class="back-top" href="#inicio">Volver al inicio <span aria-hidden="true">↑</span></a>
   </main>
   <footer class="site-footer">
     <p>HabitBox <span aria-hidden="true">·</span> Habit Tracker</p>
-    <p>Política de Privacidad</p>
+    <nav aria-label="Páginas legales"><a href="privacy.html" aria-current="page">Privacidad</a><a href="terms.html">Términos</a><a href="delete-account-es.html">Eliminar cuenta</a></nav>
   </footer>
 </body>
 </html>
